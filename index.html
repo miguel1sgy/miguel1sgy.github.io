@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesion</title>
     <style>
-        /* 1. Estilos Generales y del Cuerpo */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -13,47 +12,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333; /* Color de texto principal */
-            overflow: hidden; /* Evita barras de desplazamiento */
+            color: #333;
+            overflow: hidden;
         }
 
-        /* 2. Fondo Dinámico (Simulado) */
-        .background-mosaic {
+        /* Contenedor para múltiples imágenes */
+        .background-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Simula miniaturas con un patrón y un fuerte desenfoque */
-            background-image: 
-                url('https://drive.google.com/uc?id=1wClEHw5HlfLR4WwsRddEOyFGLoyQXWxY'), /* Foto 1 */
-                url('https://drive.google.com/uc?id=1Kc9h8dxTvzBctt29Fa7FmMvY8CCCrPGR'),  /* Foto 2 */
-                url('https://drive.google.com/uc?id=1eTxXJrEbhO9kQYkOUKV94mVcTB4H_IhZ');   /* Foto 3 */
-            background-size: cover;
-            background-position: center;
-            filter: blur(8px) grayscale(50%); /* Efecto de desenfoque y desaturación */
             z-index: -1;
-            /* Opcional: animación sutil para cambio de fondo (se requiere más CSS/JS) */
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        /* 3. Tarjeta de Login (Ventana al Recuerdo) */
+        .background-image {
+            flex: 1 0 33.33%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) grayscale(50%);
+        }
+
         .login-card {
-            background: rgba(255, 255, 255, 0.7); /* Blanco semitransparente */
+            background: rgba(255, 255, 255, 0.7);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px); /* Efecto "vidrio esmerilado" */
+            backdrop-filter: blur(10px);
             width: 350px;
             text-align: center;
         }
 
         .login-card h1 {
-            color: #4CAF50; /* Un color vibrante para el título */
+            color: #4CAF50;
             margin-bottom: 25px;
             font-size: 1.8em;
         }
 
-        /* 4. Estilos de Formulario */
         .input-group {
             margin-bottom: 20px;
             text-align: left;
@@ -70,7 +68,7 @@
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            box-sizing: border-box; /* Asegura que el padding no agrande el input */
+            box-sizing: border-box;
             transition: border-color 0.3s;
         }
 
@@ -79,7 +77,6 @@
             outline: none;
         }
 
-        /* 5. Botón de Acceso */
         .btn-acceso {
             width: 100%;
             padding: 12px;
@@ -97,7 +94,6 @@
             background-color: #45a049;
         }
 
-        /* 6. Frase Inspiradora */
         .tagline {
             margin-top: 30px;
             color: #666;
@@ -108,14 +104,16 @@
 </head>
 <body>
 
-    <div class="background-mosaic"></div>
+    <div class="background-container">
+        <div class="background-image" style="background-image: url('https://drive.google.com/uc?id=1wClEHw5HlfLR4WwsRddEOyFGLoyQXWxY')"></div>
+        <div class="background-image" style="background-image: url('https://drive.google.com/uc?id=1Kc9h8dxTvzBctt29Fa7FmMvY8CCCrPGR')"></div>
+        <div class="background-image" style="background-image: url('https://drive.google.com/uc?id=1eTxXJrEbhO9kQYkOUKV94mVcTB4H_IhZ')"></div>
+    </div>
 
     <div class="login-card">
-        
         <h1>Mis XV años Mealni 📸</h1>
 
         <form action="#" method="post">
-            
             <div class="input-group">
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" required placeholder="**********">
